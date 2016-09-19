@@ -7,7 +7,7 @@ SELECT * FROM albums WHERE artist = 'Pink Floyd';
 SELECT release_date FROM albums WHERE name = 'Thriller';
 
 -- The genre for ACDC
-SELECT genre FROM albums WHERE artist = 'ACDC';
+SELECT genre FROM albums WHERE artist = 'AC/DC';
 
 -- Which albums were released in the 1970s
 SELECT name FROM albums WHERE release_date BETWEEN 1970 AND 1979;
@@ -19,15 +19,20 @@ SELECT name FROM albums WHERE sales < 30.0;
 SELECT name FROM albums WHERE genre = 'Hard Rock';
 
 
--- +----+-----------------+---------------------+--------------+-------+------------------+
--- | id | artist          | name                | release_date | sales | genre            |
--- +----+-----------------+---------------------+--------------+-------+------------------+
--- |  1 | Michael Jackson | Thriller            |         1982 |  46.0 | Pop              |
--- |  2 | ACDC            | Back in Black       |         1980 |  26.1 | Hard Rock        |
--- |  3 | Pink Floyd      | Dark Side           |         1973 |  24.2 | Progressive Rock |
--- |  4 | W. Houston      | The Bodyguard       |         1992 |  27.4 | Soundtrack       |
--- |  5 | Meat Loaf       | Bat Out Of Hell     |         1977 |  20.6 | Hard Rock        |
--- |  6 | Eagles          | Their Greatest Hits |         1976 |  32.2 | Rock             |
--- |  7 | Bee Gees        | Sat Night Fever     |         1977 |  20.6 | Disco            |
--- |  8 | Fleetwood Mac   | Rumours             |         1977 |  27.9 | Soft Rock        |
--- +----+-----------------+---------------------+--------------+-------+------------------+
+-- The name of all albums by Pink Floyd.
+SELECT * FROM albums WHERE artist = "Pink FLoyd";
+
+-- The year Sgt. Pepper's Lonely Hearts Club Band was released
+SELECT release_date FROM albums WHERE name = "Sgt. Peppers Lonely Hearts Club Band";
+
+-- The genre for Nevermind
+SELECT genre FROM albums WHERE name = "Nevermind";
+
+-- Which albums were released in the 1990s
+SELECT name FROM albums WHERE release_date > 1990;
+
+-- Which albums had less than 20 million certified sales
+SELECT name FROM albums WHERE sales < 20;
+
+-- All the albums in the rock genre. Is this all the rock albums in the table?
+SELECT name FROM albums WHERE genre LIKE "%Rock";
