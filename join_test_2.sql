@@ -34,6 +34,20 @@ JOIN salaries AS s
 WHERE dm.to_date LIKE '9999%'
 	AND s.to_date LIKE '9999%';
 
+-- Bonus Find the names of all current employees, their department name, and their current manager's name.
+SELECT concat(e.first_name, ' ', e.last_name) AS 'Emp NAME', d.dept_name AS 'Dept Name', concat(dme.first_name, ' ', dme.last_name) AS 'Manager'
+FROM employees AS e
+JOIN dept_emp AS de
+	ON e.emp_no = de.emp_no
+JOIN departments AS d
+	ON de.dept_no = d.dept_no
+JOIN dept_manager AS dm
+	ON d.dept_no = dm.dept_no
+JOIN employees AS dme
+	ON dme.emp_no = dm.emp_no
+WHERE dm.to_date LIKE '9999%'
+	AND de.to_date LIKE '9999%';
+
 
 
 
