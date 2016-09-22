@@ -53,6 +53,11 @@ WHERE dept_no IN (
 );
 
 -- what is the most common birthday in the comp
+SELECT birth_date, count(birth_date)
+FROM employees
+GROUP BY birth_date desc
+LIMIT 1;
+
 -- what is the least common birthday in te comp
 -- how many emp currently work in each dept
 -- what is the avg salary for each dept
@@ -60,3 +65,18 @@ WHERE dept_no IN (
 -- what is the ave salary in the 80's by department
 -- how many times on avg do emp switch titles
 -- how many times on avg do emp get a raise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
